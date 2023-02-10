@@ -1,23 +1,16 @@
 pipeline {
   agent any 
-  parameters {
-    choice choices: ['dev', 'prod'], description: 'Select environment', name: 'ENV'
-  }
-  environment {
-    JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64/bin"
-  }
-
   stages {
-    stage('working with variables') {
+    stage('working with conditions') {
       steps {
         script {
-          val1 = 20
-          println "my val1 value is ${val1}"
-          // parameters values 
-          println "my parameter value is ${params.ENV}"
-          // environment values
-          println "my environment value is ${env.JAVA_HOME}"
-          sh "java -version"
+          var1 = 10 
+          if ( var1 == 10) {
+            println "my var1 value is 10"
+          }
+          else {
+            println "my var1 value is not 10"
+          }
         }
       }
     }
