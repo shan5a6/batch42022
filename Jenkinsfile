@@ -6,6 +6,9 @@ pipeline {
         script {
           File file = new File("/tmp/mydata.txt")
           println file.readLines()
+          for (line in file.readLines()) {
+            println line
+          }
         }
       }
     }
