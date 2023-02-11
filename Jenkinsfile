@@ -9,6 +9,9 @@ pipeline {
             println "a value is ${a}"
             a = a + 1
           }
+          for(i=1;i<=10;i++) {
+            println "my i value is ${i}"
+          }
         }
       }
     }
